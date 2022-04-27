@@ -17,6 +17,9 @@ leaw $1, %A
 movw (%A), %A
 
 subw %D, %A, %D
+;leaw $0,%A
+;incw %A
+
 leaw $5 , %A
 movw %D, (%A)
 leaw $1, %A
