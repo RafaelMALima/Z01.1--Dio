@@ -12,6 +12,7 @@ movw (%A), %D
 
 
 LOOP:
+<<<<<<< HEAD
 
 leaw $1, %A
 movw (%A), %A
@@ -34,7 +35,30 @@ movw (%A), %D
 leaw $LOOP, %A
 jg %D
 nop
+=======
+>>>>>>> origin
 
+leaw $1, %A
+movw (%A), %A
+
+subw %D, %A, %D
+;leaw $0,%A
+;incw %A
+
+leaw $5 , %A
+movw %D, (%A)
+leaw $1, %A
+movw %A, %D
+leaw $2, %A
+addw (%A), %D, %D
+movw %D, (%A)
+
+
+leaw $5, %A
+movw (%A), %D
+leaw $LOOP, %A
+jg %D
+nop
 
 
 
