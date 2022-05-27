@@ -124,7 +124,7 @@ public class Code {
                         return "0001";
                 }
             case "andw":
-                switch (mnemnonic[3]) {
+                switch (mnemnonic[2]) {
                     case "(%A)":
                         return "0100";
                     case "%D":
@@ -186,18 +186,22 @@ public class Code {
                         }
 
                     case "(%A)":
-                        switch (mnemnonic[2]) {
+
+                        switch (mnemnonic[3]) {
                             case "%A":
                                 return "001110000";
+
                             case "%D":
                                 return "001110000";
                         }
                 }
 
             case "addw":
+
                 switch (mnemnonic[1]) {
 
                     case "%A":
+
                         switch (mnemnonic[2]) {
                             case "%D":
                                 switch (mnemnonic[3]) {
@@ -290,6 +294,7 @@ public class Code {
                 }
 
             case "andw":
+                System.out.println((mnemnonic[1]));
                 switch (mnemnonic[1]) {
                     case "(%A)":
                         switch (mnemnonic[2]) {
@@ -307,6 +312,8 @@ public class Code {
                                         return "000000000";
                                 }
                         }
+                    case "%A":
+                        return "000000000";
                 }
 
             case "orw":

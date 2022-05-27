@@ -113,28 +113,30 @@ public class Assemble {
          * seguindo o instruction set
          */
         while (parser.advance()){
+
             switch (parser.commandType(parser.command())){
                 /* TODO: implementar */
                 case C_COMMAND:
                     instruction = "";
-                    instruction += "1000";
+                    instruction += "10";
                     instruction += Code.comp(parser.instruction(parser.command()));
                     instruction += Code.dest(parser.instruction(parser.command()));
                     instruction += Code.jump(parser.instruction(parser.command()));
 
 
+
                 break;
-            case A_COMMAND:
-                instruction = "";
-                instruction += "00";
-                if (table.contains(parser.symbol(parser.command()))){
-                    String transformacao = "";
-                    transformacao += table.getAddress(parser.symbol(parser.command()));
-                    instruction += Code.toBinary(transformacao);
-                }
-                else{
-                    instruction += Code.toBinary(parser.symbol(parser.command()));
-                }
+                case A_COMMAND:
+                    instruction = "";
+                    instruction += "00";
+                    if (table.contains(parser.symbol(parser.command()))){
+                        String transformacao = "";
+                        transformacao += table.getAddress(parser.symbol(parser.command()));
+                        instruction += Code.toBinary(transformacao);
+                    }
+                    else{
+                        instruction += Code.toBinary(parser.symbol(parser.command()));
+                    }
 
 
 
